@@ -163,7 +163,8 @@ export function RecentOrders() {
 
         <div className="flex items-center justify-between gap-4 px-4 pb-1">
           <p className="text-muted-foreground text-sm">
-            Viewing {visibleOrderCount} out of {orderCount.toLocaleString()} orders
+            Viewing {visibleOrderCount} of {orderCount.toLocaleString()} loaded orders (22,064 total orders · 541,909
+            transactions)
           </p>
 
           <Pagination className="mx-0 w-auto justify-end">

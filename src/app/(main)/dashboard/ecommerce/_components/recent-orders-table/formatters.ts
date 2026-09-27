@@ -6,7 +6,7 @@ export function formatOrderCount(filter: OrderFilter, count: number) {
   const orderLabel = count === 1 ? "order" : "orders";
 
   if (filter === "All") {
-    return `${count.toLocaleString()} ${orderLabel}`;
+    return `${count.toLocaleString()} ${orderLabel} (22,064 total · 541,909 transactions)`;
   }
 
   if (filter === "Needs action") {
@@ -14,7 +14,7 @@ export function formatOrderCount(filter: OrderFilter, count: number) {
   }
 
   if (filter === "Returns") {
-    return `${count.toLocaleString()} ${count === 1 ? "return" : "returns"}`;
+    return `${count.toLocaleString()} returns (3,836 total)`;
   }
 
   return `${count.toLocaleString()} ${filter.toLowerCase()} ${orderLabel}`;

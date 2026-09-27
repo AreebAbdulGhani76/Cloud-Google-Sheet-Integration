@@ -27,7 +27,15 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+.env.*
+!.env.example
+
+# service account and credentials
+*-credentials.json
+leads-data-*.json
+service-account*.json
 
 # vercel
 .vercel

@@ -7,7 +7,7 @@ import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle }
 import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
 import { Separator } from "@/components/ui/separator";
 
-const chartData = [{ month: "current", "in-stock": 760, "low-stock": 320, "out-of-stock": 160 }];
+const chartData = [{ month: "current", "in-stock": 3894, "low-stock": 142, "out-of-stock": 34 }];
 const totalUnits = chartData[0]["in-stock"] + chartData[0]["low-stock"] + chartData[0]["out-of-stock"];
 const availablePercent = Math.round((chartData[0]["in-stock"] / totalUnits) * 100);
 const gaugeSegmentCount = 32;

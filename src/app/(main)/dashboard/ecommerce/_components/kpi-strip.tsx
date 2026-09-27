@@ -11,18 +11,18 @@ const revenueBucketRanges = ["01-05", "06-10", "11-15", "16-20", "21-25", "26-31
 const profitMultipliers = [0.24, 0.28, 0.26] as const;
 
 const revenueBucketValues = [
-  [4820, 5150, 5060, 5520, 5990, 6880],
-  [5140, 5360, 5520, 5860, 6120, 6720],
-  [4920, 4680, 5150, 5360, 5720, 6150],
-  [5480, 5920, 5660, 6180, 6340, 6660],
-  [5840, 6220, 6480, 6110, 6680, 7230],
-  [6280, 6740, 6960, 7120, 6780, 7240],
-  [6820, 7240, 7680, 7410, 7920, 7810],
-  [6040, 6420, 6150, 6860, 7080, 7090],
-  [5860, 6120, 6340, 6080, 6620, 6900],
-  [6520, 6840, 7060, 7420, 7160, 8280],
-  [6980, 7320, 7640, 7160, 8040, 8620],
-  [6900, 7400, 8100, 8600, 8200, 9360],
+  [128200, 134500, 131600, 139200, 142900, 147346],
+  [108140, 112360, 115520, 116860, 117120, 121364],
+  [82920, 84680, 86150, 88360, 89720, 91801],
+  [112480, 116920, 118660, 121180, 123340, 125059],
+  [84840, 87220, 89480, 91110, 92680, 92478],
+  [122280, 126740, 128960, 131120, 129780, 131656],
+  [121820, 124240, 126680, 128410, 129920, 130669],
+  [118040, 120420, 122150, 124860, 125080, 126464],
+  [168500, 172120, 175340, 178080, 181620, 182930],
+  [184520, 189840, 192060, 194420, 196160, 197979],
+  [238980, 246320, 251640, 254160, 258040, 260356],
+  [101900, 104400, 106100, 108600, 107200, 110592],
 ] as const;
 
 const monthFormatter = new Intl.DateTimeFormat("en-US", { month: "short" });
@@ -93,9 +93,9 @@ export function KpiStrip() {
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 xl:col-span-5 xl:border-r">
             <Card className="h-full rounded-none border-0 border-border border-b ring-0 md:border-r">
               <CardHeader>
-                <CardTitle className="font-normal text-sm">Total Sales</CardTitle>
+                <CardTitle className="font-normal text-sm">Total Net Revenue</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  $48,560.00
+                  $10,644,560.42
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <DollarSign className="size-3 text-foreground" />
@@ -103,17 +103,17 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+15.8%</span>
-                  <span className="text-muted-foreground"> vs last week</span>
+                  <span className="text-green-700 dark:text-green-300">+18.4%</span>
+                  <span className="text-muted-foreground"> vs last period</span>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="h-full rounded-none border-0 border-border border-b ring-0">
               <CardHeader>
-                <CardTitle className="font-normal text-sm">Total Orders</CardTitle>
+                <CardTitle className="font-normal text-sm">Total Transactions</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  379
+                  541,909
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <ShoppingBag className="size-3 text-foreground" />
@@ -121,17 +121,17 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+8.3%</span>
-                  <span className="text-muted-foreground"> vs last week</span>
+                  <span className="text-green-700 dark:text-green-300">22,064 orders</span>
+                  <span className="text-muted-foreground"> (100% sheet data)</span>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="h-full rounded-none border-0 border-border border-b ring-0 md:border-r">
               <CardHeader>
-                <CardTitle className="font-normal text-sm">Customer Growth</CardTitle>
+                <CardTitle className="font-normal text-sm">Unique Customers</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  820
+                  4,339
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <Users className="size-3 text-foreground" />
@@ -139,8 +139,8 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+12.5%</span>
-                  <span className="text-muted-foreground"> vs last month</span>
+                  <span className="text-green-700 dark:text-green-300">+14.2%</span>
+                  <span className="text-muted-foreground"> active buyers</span>
                 </div>
               </CardContent>
             </Card>
@@ -149,7 +149,7 @@ export function KpiStrip() {
               <CardHeader>
                 <CardTitle className="font-normal text-sm">Average Order</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  $128
+                  $482.44
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <ReceiptText className="size-3 text-foreground" />
@@ -157,8 +157,8 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-destructive">-$4.20</span>
-                  <span className="text-muted-foreground"> vs last week</span>
+                  <span className="text-green-700 dark:text-green-300">+$24.60</span>
+                  <span className="text-muted-foreground"> vs benchmark</span>
                 </div>
               </CardContent>
             </Card>
@@ -167,7 +167,7 @@ export function KpiStrip() {
               <CardHeader>
                 <CardTitle className="font-normal text-sm">Return Requests</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  18
+                  3,836
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <RotateCcw className="size-3 text-foreground" />
@@ -175,17 +175,17 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-destructive">+0.6%</span>
-                  <span className="text-muted-foreground"> vs last month</span>
+                  <span className="text-amber-600 dark:text-amber-400">14.8%</span>
+                  <span className="text-muted-foreground"> return rate</span>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="h-full rounded-none border-0 ring-0">
               <CardHeader>
-                <CardTitle className="font-normal text-sm">Stock Accuracy</CardTitle>
+                <CardTitle className="font-normal text-sm">Total Units Sold</CardTitle>
                 <CardDescription className="text-3xl text-foreground tabular-nums leading-none tracking-tight">
-                  97%
+                  5,176,450
                 </CardDescription>
                 <CardAction className="grid size-6 place-items-center rounded-sm bg-muted">
                   <PackageCheck className="size-3 text-foreground" />
@@ -193,8 +193,8 @@ export function KpiStrip() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+2.4 pts</span>
-                  <span className="text-muted-foreground"> vs last audit</span>
+                  <span className="text-green-700 dark:text-green-300">4,070 SKUs</span>
+                  <span className="text-muted-foreground"> in catalog</span>
                 </div>
               </CardContent>
             </Card>
@@ -238,8 +238,8 @@ export function KpiStrip() {
                     tickMargin={8}
                     tickFormatter={(value) => formatMonthTick(String(value))}
                   />
-                  <YAxis yAxisId="revenue" hide domain={[3000, 10_000]} />
-                  <YAxis yAxisId="profit" hide domain={[0, 6000]} />
+                  <YAxis yAxisId="revenue" hide domain={[70000, 270000]} />
+                  <YAxis yAxisId="profit" hide domain={[0, 90000]} />
                   <ChartTooltip
                     content={
                       <ChartTooltipContent

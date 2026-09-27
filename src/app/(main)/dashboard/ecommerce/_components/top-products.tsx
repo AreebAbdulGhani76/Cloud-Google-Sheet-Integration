@@ -5,40 +5,52 @@ import { Separator } from "@/components/ui/separator";
 
 const categories = [
   {
-    name: "Apparel",
-    share: 44,
+    name: "Home Decor",
+    share: 46,
     color: "var(--chart-3)",
   },
   {
-    name: "Accessories",
+    name: "Craft & Party",
     share: 32,
     color: "var(--chart-2)",
   },
   {
-    name: "Home",
-    share: 24,
+    name: "Bags & Storage",
+    share: 22,
     color: "var(--chart-1)",
   },
 ] as const;
 
 const products = [
   {
-    name: "Linen Overshirt",
-    category: "Apparel",
-    share: "31%",
-    sales: "$14,820",
+    name: "Regency Cakestand 3 Tier",
+    category: "Home Decor",
+    share: "27%",
+    sales: "$174,484",
   },
   {
-    name: "Everyday Tote",
-    category: "Accessories",
-    share: "24%",
-    sales: "$11,460",
+    name: "Paper Craft , Little Birdie",
+    category: "Craft & Party",
+    share: "26%",
+    sales: "$168,469",
   },
   {
-    name: "Ceramic Planter",
-    category: "Home",
-    share: "18%",
-    sales: "$8,930",
+    name: "White Hanging Heart T-Light",
+    category: "Home Decor",
+    share: "17%",
+    sales: "$106,292",
+  },
+  {
+    name: "Party Bunting Garland",
+    category: "Craft & Party",
+    share: "15%",
+    sales: "$99,504",
+  },
+  {
+    name: "Jumbo Bag Red Retrospot",
+    category: "Bags & Storage",
+    share: "15%",
+    sales: "$94,340",
   },
 ] as const;
 
@@ -48,7 +60,7 @@ export function TopProducts() {
       <CardHeader>
         <CardTitle className="font-normal text-muted-foreground text-sm">Top Products</CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
-          73% of sales
+          $643,089 top revenue
         </CardDescription>
         <CardAction>
           <ArrowUpRight className="size-4" />

@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Separator } from "@/components/ui/separator";
 
 import { CustomerReviews } from "./_components/customer-reviews";
+import { EcommerceSheetsSync } from "./_components/ecommerce-sheets-sync";
 import { Inventory } from "./_components/inventory";
 import { KpiStrip } from "./_components/kpi-strip";
 import { RecentOrders } from "./_components/recent-orders";
@@ -15,9 +16,9 @@ import { TopProducts } from "./_components/top-products";
 import { TrafficSources } from "./_components/traffic-sources";
 
 export const metadata: Metadata = {
-  title: "Open Source E-commerce Dashboard with shadcn/ui",
+  title: "E-commerce Dashboard | Google Sheets Connected",
   description:
-    "Explore an open source e-commerce dashboard with sales metrics, orders, store traffic, inventory, products, and reviews.",
+    "Live e-commerce dashboard with sales metrics, orders, store traffic, inventory, and Google Sheets integration.",
   alternates: {
     canonical: "/dashboard/ecommerce",
   },
@@ -34,7 +35,9 @@ export default function Page() {
           <p className="text-muted-foreground text-sm">{formattedDate}</p>
         </div>
 
-        <div className="flex flex-wrap items-end justify-end gap-2 lg:w-fit">
+        <div className="flex flex-wrap items-center justify-end gap-2 lg:w-fit">
+          <EcommerceSheetsSync />
+          <Separator orientation="vertical" className="h-6 hidden sm:block" />
           <Select defaultValue="this-month">
             <SelectTrigger className="w-34" id="ecommerce-period" size="sm">
               <SelectValue placeholder="This Month" />
